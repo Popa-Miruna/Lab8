@@ -15,6 +15,7 @@ public class JDBC {
         alb.create("Radu", 4, 2000);
         alb.findByArtist(4);
         alb.findByArtist(5);
+        alb.findByArtist(2);
         db.closeConnection();
     }
 }
