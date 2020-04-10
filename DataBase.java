@@ -13,14 +13,13 @@ public class DataBase {
 
     private DataBase() {
         try{
-            System.out.println("Connecting to a database..");
             con = DriverManager.getConnection(DB_URL, user, pass);
             System.out.println("Creating database..");
 
             Statement stmt = con.createStatement();
             String sql = "CREATE DATABASE IF NOT EXISTS MusicAlbums";
             stmt.executeUpdate(sql);
-            System.out.println("Database created successfully!");
+            System.out.println("Database created!");
 
         } catch (SQLException err) {
             System.out.println(err.getMessage());
@@ -55,7 +54,7 @@ public class DataBase {
                     "country varchar(100)," +
                     "primary key (id));";
             stmt.executeUpdate(sql);
-            System.out.println("Table artists created successfully!");
+            System.out.println("Table artists created!");
 
             sql = "CREATE TABLE IF NOT EXISTS albums(id integer not null auto_increment," +
                     "name varchar(100) not null," +
@@ -63,7 +62,7 @@ public class DataBase {
                     "release_year integer," +
                     "primary key (id));";
             stmt.executeUpdate(sql);
-            System.out.println("Table albums created successfully!");
+            System.out.println("Table albums created!");
 
         } catch(SQLException e) {
             System.out.println(e);
