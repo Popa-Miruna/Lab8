@@ -58,7 +58,7 @@ public class DataBase {
 
             sql = "CREATE TABLE IF NOT EXISTS albums(id integer not null auto_increment," +
                     "name varchar(100) not null," +
-                    "artist_id integer not null references artists on delete restrict," +
+                    "id_artist integer not null references artists on delete restrict," +
                     "release_year integer," +
                     "primary key (id));";
             stmt.executeUpdate(sql);
